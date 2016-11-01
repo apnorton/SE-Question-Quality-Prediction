@@ -1,2 +1,4 @@
+# Hide the large data files
 data/raw-xml/*.xml
 data/se-dump.db
+data/se-df.pkl

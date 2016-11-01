@@ -5,7 +5,9 @@ This directory contains the raw data (and--in the future--a processed form of sa
 
 The file `database_import.py` produces a sqlite database in the same directory when run.  This should be run once with the data dump files in xml form in the same directory, then the resulting sqlite database has been moved to the current directory.
 
-All the data from the 2016 database dump is in `se-dump.db`.  The `create-dataframe.py` file will read from this database and convert it to a pandas dataframe and [write this dataframe to a pickled form][2].
+All the data from the 2016 database dump is in `se-dump.db`.  After dumping the database, I created an index in the `posts` table on the `CreationDate` column.  This doesn't really need to be there anymore, but it was helpful during testing to restrict queries to a particular year's questions.
+
+The `create-dataframe.py` file will read from this database and convert it to a pandas dataframe and [write this dataframe to a pickled form][2].  
 
 XML Schema
 ----------
