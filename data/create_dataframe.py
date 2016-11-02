@@ -12,9 +12,9 @@ def log_status(msg):
 
 # Gets all questions + asker information from the data dump
 question_search_sql = '''
-                        SELECT p.CommentCount,  p.ViewCount,   p.Score,            
-                               p.Tags,          p.Title,       p.AnswerCount,  
-                               p.FavoriteCount, u.Reputation,  
+                        SELECT p.CommentCount, p.ViewCount,   p.Score,            
+                               p.Tags,         p.AnswerCount, p.FavoriteCount, 
+                               u.Reputation,  
                                julianday(p.CreationDate) - julianday(u.CreationDate) as [UserAge],
                                CAST(strftime("%m", p.CreationDate) as integer) as [Month],
                                CAST(strftime("%w", p.CreationDate) as integer) as [Day],
